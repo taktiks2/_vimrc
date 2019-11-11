@@ -19,6 +19,13 @@ set confirm
 
 set autoindent
 
+set noerrorbells
+set novisualbell
+set visualbell t_vb=
+
+let g:clang_c_options = '-std=gnu11'
+let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+
 
 " Neobundle.vim
 " Note: Skip initialization for vim-tiny or vim-small.
@@ -45,7 +52,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-scripts/SingleCompile'
-
+NeoBundle 'justmao945/vim-clang'
 
 
 
