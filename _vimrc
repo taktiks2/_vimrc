@@ -44,6 +44,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'vim-scripts/SingleCompile'
 
 
 
