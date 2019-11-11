@@ -1,7 +1,8 @@
 set number
 set title
-set list
 set ruler
+
+set backspace=indent,eol,start
 
 syntax on
 
