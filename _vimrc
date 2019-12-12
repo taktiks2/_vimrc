@@ -25,6 +25,8 @@ set noerrorbells
 set novisualbell
 set visualbell t_vb=
 
+*******************************************************************************************
+
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -52,6 +54,8 @@ nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
+*******************************************************************************************
+
 call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
 call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
 call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
@@ -61,8 +65,12 @@ call submode#map('bufmove', 'n', '', '<', '<C-w><')
 call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
+*******************************************************************************************
+
 let g:clang_c_options = '-std=gnu11'
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+
+*******************************************************************************************
 
 " 'Shougo/neocomplete.vim' {{{
 let g:neocomplete#enable_at_startup = 1
@@ -73,6 +81,8 @@ let g:neocomplete#force_overwrite_completefunc = 1
 let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 """}}}
+
+*******************************************************************************************
 
 " 'justmao945/vim-clang' {{{
 
@@ -113,6 +123,8 @@ let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
 
 autocmd FileType c ClangFormatAutoEnable
 
+*******************************************************************************************
+
 function! s:clang_format()
   let now_line = line(".")
   exec ":%! clang-format"
@@ -126,6 +138,7 @@ if executable('clang-format')
   augroup END
 endif
 
+*******************************************************************************************
 
 " Neobundle.vim
 " Note: Skip initialization for vim-tiny or vim-small.
