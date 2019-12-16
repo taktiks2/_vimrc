@@ -9,13 +9,13 @@ syntax on
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-
+ 
 set fileencoding=utf-8
 set encoding=utf-8
 
-set directory=C:\Users\Public\Backup
-set backupdir=C:\Users\Public\Backup
-set undodir=C:\Users\Public\Backup
+set directory=~\.vim\.swp
+set backupdir=~\.vim\.backup
+set undodir=~\.vim\.undo
 
 set confirm
 
