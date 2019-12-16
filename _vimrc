@@ -6,16 +6,16 @@ set backspace=indent,eol,start
 
 syntax on
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 set fileencoding=utf-8
 set encoding=utf-8
 
-
-set nobackup
-set writebackup
+set directory=C:\Users\Public\Backup
+set backupdir=C:\Users\Public\Backup
+set undodir=C:\Users\Public\Backup
 
 set confirm
 
