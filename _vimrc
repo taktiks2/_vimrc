@@ -6,9 +6,9 @@ set backspace=indent,eol,start
 
 syntax on
 
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
  
 set fileencoding=utf-8
 set encoding=utf-8
@@ -53,6 +53,7 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 *******************************************************************************************
 
@@ -67,7 +68,7 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
 *******************************************************************************************
 
-let g:clang_c_options = '-std=gnu11'
+"let g:clang_c_options = '-std=gnu11'
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
 
 *******************************************************************************************
@@ -78,7 +79,7 @@ if !exists('g:neocomplete#force_omni_input_patterns')
         let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_overwrite_completefunc = 1
-let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 """}}}
 
@@ -93,7 +94,7 @@ let g:clang_auto_select = 0
 let g:clang_use_library = 1
 
 " default 'longest' can not work with neocomplete
-let g:clang_c_completeopt   = 'menuone'
+"let g:clang_c_completeopt   = 'menuone'
 let g:clang_cpp_completeopt = 'menuone'
 
 if executable('clang-3.6')
@@ -116,12 +117,12 @@ else
     let g:clang_exec = 'clang-format'
 endif
 
-let g:clang_c_options = '-std=c11'
+"let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
 
 " }}}
 
-autocmd FileType c ClangFormatAutoEnable
+"autocmd FileType c ClangFormatAutoEnable
 
 *******************************************************************************************
 
