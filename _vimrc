@@ -69,7 +69,7 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 *******************************************************************************************
 
 "let g:clang_c_options = '-std=gnu11'
-let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+"let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
 
 *******************************************************************************************
 
@@ -80,7 +80,7 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_overwrite_completefunc = 1
 "let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+"let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 """}}}
 
 *******************************************************************************************
