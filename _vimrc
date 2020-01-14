@@ -68,24 +68,30 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
 *******************************************************************************************
 
-"let g:clang_c_options = '-std=gnu11'
-"let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-
+let g:clang_c_options = '-std=gnu11'
+let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+let g:clang_format#style_options = {
+			\ "IndentWidth":	4,
+			\ "SpacesBeforeTrailingComments":	1,
+			\ "Standard":	"Cpp11",
+			\ "TabWidth":	4,
+			\ "AllowAllArgumentsOnNextLine":	"true"
+}
 *******************************************************************************************
 
-" 'Shougo/neocomplete.vim' {{{
+ 'Shougo/neocomplete.vim' {{{
 let g:neocomplete#enable_at_startup = 1
 if !exists('g:neocomplete#force_omni_input_patterns')
         let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_overwrite_completefunc = 1
-"let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 """}}}
 
 *******************************************************************************************
 
-" 'justmao945/vim-clang' {{{
+ 'justmao945/vim-clang' {{{
 
 " disable auto completion for vim-clanG
 let g:clang_auto = 0
@@ -94,7 +100,7 @@ let g:clang_auto_select = 0
 let g:clang_use_library = 1
 
 " default 'longest' can not work with neocomplete
-"let g:clang_c_completeopt   = 'menuone'
+let g:clang_c_completeopt   = 'menuone'
 let g:clang_cpp_completeopt = 'menuone'
 
 if executable('clang-3.6')
@@ -117,27 +123,27 @@ else
     let g:clang_exec = 'clang-format'
 endif
 
-"let g:clang_c_options = '-std=c11'
+let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
 
-" }}}
+ }}}
 
-"autocmd FileType c ClangFormatAutoEnable
+autocmd FileType c ClangFormatAutoEnable
 
 *******************************************************************************************
 
-function! s:clang_format()
-  let now_line = line(".")
-  exec ":%! clang-format"
-  exec ":" . now_line
-endfunction
+"function! s:clang_format()
+"  let now_line = line(".")
+"  exec ":%! clang-format"
+"  exec ":" . now_line
+"endfunction
 
-if executable('clang-format')
-  augroup cpp_clang_format
-    autocmd!
-    autocmd BufWrite,FileWritePre,FileAppendPre *.[ch]pp call s:clang_format()
-  augroup END
-endif
+"if executable('clang-format')
+"  augroup cpp_clang_format
+"    autocmd!
+"    autocmd BufWrite,FileWritePre,FileAppendPre *.[ch]pp call s:clang_format()
+"  augroup END
+"endif
 
 *******************************************************************************************
 
